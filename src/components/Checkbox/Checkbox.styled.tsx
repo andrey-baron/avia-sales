@@ -6,6 +6,7 @@ interface IStyledCheckboxProps {
 
 export const CheckboxContainer = styled.div`
   display: flex;
+  align-items: center;
   padding: 10px 20px;
   &:hover {
     transition: background 350ms;
@@ -34,8 +35,10 @@ export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
 `;
 
 export const Label = styled.label`
+  font-family: "Open Sans";
   margin-left: 10px;
   color: #4a4a4a;
+  font-size: 13px;
 `;
 
 export const StyledCheckbox = styled.div<IStyledCheckboxProps>`
