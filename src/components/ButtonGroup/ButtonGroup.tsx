@@ -1,13 +1,19 @@
 import React from "react";
 import { ButtonGroupStyled } from "./ButtonGroup.styled";
 import Button from "../Button/Button";
+import { SortType } from "../../Contracts";
 
-const ButtonGroup: React.FC = () => {
+interface ButtonGroupProps {
+  sortType: SortType;
+  onChangeType: (value: SortType) => void;
+}
+const ButtonGroup: React.FC<ButtonGroupProps> = ({ sortType, onChangeType }) => {
   return (
     <ButtonGroupStyled>
-      <Button type="primary" title="Самый дешевый"></Button>
-      <Button title="Самый быстрый"></Button>
-      <Button title="Оптимальный"></Button>
+      {}
+      <Button {...(sortType === "Cheap" ? { type: "primary" } : "")} onClick={() => onChangeType("Cheap")} title="Самый дешевый"></Button>
+      <Button {...(sortType === "Fast" ? { type: "primary" } : "")} onClick={() => onChangeType("Fast")} title="Самый быстрый"></Button>
+      <Button {...(sortType === "Optimal" ? { type: "primary" } : "")} onClick={() => onChangeType("Optimal")} title="Оптимальный"></Button>
     </ButtonGroupStyled>
   );
 };

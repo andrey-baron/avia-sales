@@ -5,7 +5,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 const RadioButton: React.FC<InputProps> = props => {
   return (
     <RadioButtonContainer>
-      <HiddenRadioButton {...{ ...{ type: "radio" }, ...props }} />
+      <HiddenRadioButton {...{ ...props, type: "radio" }} />
       <StyledRadioButton checked={props.checked}>
         <Icon width="12" height="12" viewBox="0 0 12 12">
           <circle cx="6" cy="6" r="6" fill="#2196F3" />

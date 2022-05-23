@@ -13,6 +13,13 @@ export const ButtonStyled = styled.div<IButtonType>`
   text-transform: uppercase;
   flex-grow: 1;
   cursor: pointer;
+
+  &:hover {
+    background: #f1fcff;
+    color: #4a4a4a;
+    border: 1px solid #dfe5ec;
+  }
+
   ${props => {
     switch (props.type) {
       case "default":
@@ -26,16 +33,22 @@ export const ButtonStyled = styled.div<IButtonType>`
           background: #2196f3;
           color: #fff;
           border: 1px solid #2196f3;
+          &:hover {
+            background: #2196f3;
+            color: #fff;
+            border: 1px solid #2196f3;
+          }
         `;
     }
   }};
-  &:hover {
-    background: #f1fcff;
-    color: #4a4a4a;
-    border: 1px solid #dfe5ec;
-  }
   &:nth-child(2) {
     border-left: 0;
     border-right: 0;
+  }
+  &:nth-child(1) {
+    border-radius: 5px 0px 0px 5px;
+  }
+  &:nth-child(3) {
+    border-radius: 0 5px 5px 0;
   }
 `;

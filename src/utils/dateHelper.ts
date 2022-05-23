@@ -4,4 +4,10 @@ export function msToHoursAndMinutes(duration: number) {
   return { hours, minutes };
 }
 
-// export
+export function dateFormatting(unix: number) {
+  const date = new Date(unix);
+  const hours = date.getHours();
+  const minutes = "0" + date.getMinutes();
+
+  return `${hours}:${minutes.slice(-2)}`;
+}

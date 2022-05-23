@@ -34,3 +34,5 @@ export interface Company {
   // Т.к. картинки пока храниться будут у Вас локально - имя и путь к картинке можете замапить на те что будут у вас
   logo: string;
 }
+
+export type SortType = "Cheap" | "Fast" | "Optimal";
