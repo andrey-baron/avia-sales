@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/avia-sales/static/css/main.3f2950e8.css",
+    "main.js": "/avia-sales/static/js/main.e8676f3e.js",
+    "static/js/27.bebb5c46.chunk.js": "/avia-sales/static/js/27.bebb5c46.chunk.js",
+    "static/media/OpenSans-SemiBold.eot": "/avia-sales/static/media/OpenSans-SemiBold.16e5bd74a30bab85dbd9.eot",
+    "static/media/OpenSans-SemiBold.ttf": "/avia-sales/static/media/OpenSans-SemiBold.dd4e8cb6bdf262547359.ttf",
+    "static/media/OpenSans-Regular.eot": "/avia-sales/static/media/OpenSans-Regular.549c7c27e141332b2241.eot",
+    "static/media/OpenSans-Regular.ttf": "/avia-sales/static/media/OpenSans-Regular.56f1eef4f0e56644f3cc.ttf",
+    "static/media/OpenSans-SemiBold.woff": "/avia-sales/static/media/OpenSans-SemiBold.1232ba75e12556959958.woff",
+    "static/media/OpenSans-Regular.woff": "/avia-sales/static/media/OpenSans-Regular.74fbb1368a3029d9e39a.woff",
+    "static/media/OpenSans-SemiBold.woff2": "/avia-sales/static/media/OpenSans-SemiBold.117298bec81d6c8250df.woff2",
+    "static/media/OpenSans-Regular.woff2": "/avia-sales/static/media/OpenSans-Regular.9ffed65db527232e9a9d.woff2",
+    "index.html": "/avia-sales/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.3f2950e8.css",
+    "static/js/main.e8676f3e.js"
+  ]
+}
