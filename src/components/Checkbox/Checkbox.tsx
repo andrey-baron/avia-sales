@@ -2,10 +2,6 @@ import React from "react";
 import { CheckboxContainer, HiddenCheckbox, Icon, StyledCheckbox, Label } from "./Checkbox.styled";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
-// interface CheckboxProps {
-//   checked: boolean;
-//   nestedProps?: any;
-// }
 
 const Checkbox: React.FC<InputProps> = props => {
   return (
