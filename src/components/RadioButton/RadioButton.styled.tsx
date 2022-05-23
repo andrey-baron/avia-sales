@@ -11,7 +11,7 @@ export const RadioButtonContainer = styled(CheckboxContainer)`
   }
 `;
 
-export const HiddenRadioButton = styled.input.attrs({ type: "radio" })`
+export const HiddenRadioButton = styled.input`
   border: 0;
   clip: rect(0 0 0 0);
   clippath: inset(50%);

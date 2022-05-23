@@ -1,13 +1,38 @@
 import { Col, Row } from "antd";
-import React from "react";
+import React, { useMemo } from "react";
+import { Ticket } from "../../Contracts";
 import { Card } from "../../styled-components/Card";
 import { Logo, Price, Label, Value } from "./ReisCard.styled";
-const ReisCard: React.FC = () => {
+import { msToHoursAndMinutes } from "../../utils/dateHelper";
+
+const priceFormatting = (price: number) => {
+  return price
+    .toFixed(2)
+    .replace(/./g, function (c, i, a) {
+      return i > 0 && c !== "." && (a.length - i) % 3 === 0 ? " " + c : c;
+    })
+    .slice(0, -3);
+};
+
+interface ReisCardProps {
+  ticket: Ticket;
+}
+
+const ReisCard: React.FC<ReisCardProps> = ({ ticket }) => {
+  const timeDuration = useMemo(() => {
+    return msToHoursAndMinutes(ticket.info.duration);
+  }, []);
+
+  const dates = useMemo(() => {
+    const dateStart = new Date(ticket.info.dateStart * 1000);
+    const dateEnd = new Date(ticket.info.dateEnd * 1000);
+  }, []);
+
   return (
     <Card>
       <Row gutter={[20, 20]}>
         <Col span="12">
-          <Price>10 000 P</Price>
+          <Price>{priceFormatting(ticket.price)} P</Price>
         </Col>
         <Col span="12">
           <Logo src="/S7Logo.png"></Logo>
@@ -18,7 +43,7 @@ const ReisCard: React.FC = () => {
         </Col>
         <Col span="8">
           <Label>В пути</Label>
-          <Value>21ч 15м</Value>
+          <Value>{`${timeDuration.hours}ч ${timeDuration.minutes}м`}</Value>
         </Col>
         <Col span="8">
           <Label>2 пересадки</Label>

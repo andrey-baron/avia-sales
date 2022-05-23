@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Layout } from "./styled-components/MainLayout";
 import { Wrapper } from "./styled-components/Wrapper";
@@ -13,18 +13,29 @@ import "./index.css";
 import Logo from "./components/Logo";
 import Button from "./components/Button/Button";
 import ButtonGroup from "./components/ButtonGroup/ButtonGroup";
+import FilterReis from "./components/FilterReis/FilterReis";
+import { CompaniesApi } from "./api/CompaniesApi";
+import { Ticket } from "./Contracts";
+import { TicketsApi } from "./api/TicketsApi";
 
 function App() {
-  const [checked, setChecked] = useState(true);
-  const handleCheckboxChange = (value: boolean) => {
-    setChecked(value);
-  };
+  const [tickets, setTickets] = useState<Array<Ticket>>([]);
+
+  useEffect(() => {
+    TicketsApi.get().then(res => {
+      setTickets(res);
+      console.log(res);
+    });
+  }, []);
+
   return (
     <>
       <GlobalStyles />
       <Layout>
         <Logo />
+
         <Wrapper>
+          <FilterReis />
           <Row gutter={20}>
             <Col span={8}>
               <Row gutter={[0, 20]}>
@@ -42,13 +53,12 @@ function App() {
                   <ButtonGroup></ButtonGroup>
                 </Col>
 
-                <Col span={24}>
-                  <ReisCard></ReisCard>
-                </Col>
+                {tickets.map(ticket => (
+                  <Col key={ticket.id} span={24}>
+                    <ReisCard ticket={ticket}></ReisCard>
+                  </Col>
+                ))}
 
-                <Col span={24}>
-                  <ReisCard></ReisCard>
-                </Col>
                 <Col span={24}>
                   <Button type="primary" title="Показать еще 5 билетов"></Button>
                 </Col>

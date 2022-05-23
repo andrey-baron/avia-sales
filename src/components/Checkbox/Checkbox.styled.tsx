@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface IStyledCheckboxProps {
-  checked: boolean;
+  checked?: boolean;
 }
 
 export const CheckboxContainer = styled.div`
@@ -21,7 +21,7 @@ export const Icon = styled.svg`
 `;
 // Hide checkbox visually but remain accessible to screen readers.
 // Source: https://polished.js.org/docs/#hidevisually
-export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
+export const HiddenCheckbox = styled.input`
   border: 0;
   clip: rect(0 0 0 0);
   clippath: inset(50%);
